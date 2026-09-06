@@ -244,7 +244,10 @@ ORDER BY returned_percent DESC
 -- 7. What is the most preferred payment mode? --
 SELECT payment_mode, 
 	COUNT(payment_mode) AS total_count,
-	CAST(COUNT(payment_mode) * 100.0/ SUM(COUNT(payment_mode)) OVER() AS DECIMAL(5,2)) AS percentage
+	CONCAT(
+        ROUND(COUNT(payment_mode) * 100.0 / SUM(COUNT(payment_mode)) OVER(), 2),
+        '%'
+    ) AS percentage
 FROM sales
 GROUP BY payment_mode
 ORDER BY total_count DESC 
