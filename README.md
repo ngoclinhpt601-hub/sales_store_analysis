@@ -43,7 +43,14 @@ Analyze transactional sales data to:
    - **Preferred payment modes** → streamline payment processing.  
    - **Purchasing behavior by age group** → targeted marketing campaigns.  
    - **Monthly sales trends** → plan inventory and seasonal promotions.  
-   - **Gender-based product preferences** → personalized ads and gender-focused campaigns.  
+   - **Gender-based product preferences** → personalized ads and gender-focused campaigns.
+     
+### Key Results
+- **Top 5 Products by Quantity Sold**: Wardrobe, Vegetables, Sofa, Dining Table, Fruits.  
+- **Top 5 VIP Customers by Spending**: The amount they spent is around $99,000 or more.
+- **Monthly Sales Trend**: Peak in July, lowest in May.  
+- **Preferred Payment Mode**: Credit Card (32.4%), EMI (17.5%), Debit Card (17.2%).  
+- **Age Group Spending**: 36-50 contributes the highest revenue share. 
 
 ## 📊 Key Insights
 - **Top-selling products** drive majority of revenue → focus marketing efforts here.  
@@ -64,3 +71,4 @@ This project demonstrates how SQL can be leveraged to:
 - CSV dataset  
 - GitHub for version control and documentation
 
+ 
