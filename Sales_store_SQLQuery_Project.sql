@@ -242,7 +242,9 @@ ORDER BY returned_percent DESC
 -- Business impact: reduce returns, improve product descriptions/expectations. Helps identify and fix product or logistics issues. --
 
 -- 7. What is the most preferred payment mode? --
-SELECT payment_mode, COUNT(payment_mode) AS total_count
+SELECT payment_mode, 
+	COUNT(payment_mode) AS total_count,
+	CAST(COUNT(payment_mode) * 100.0/ SUM(COUNT(payment_mode)) OVER() AS DECIMAL(5,2)) AS percentage
 FROM sales
 GROUP BY payment_mode
 ORDER BY total_count DESC 
@@ -279,6 +281,7 @@ SELECT
 	SUM(quantity) AS total_quantity
 FROM sales
 GROUP BY FORMAT(purchase_date, 'yyyy-MM')
+ORDER BY total_quantity ASC
 -- Business problem: sales fluctuations go unnoticed.
 -- Business impact: plan inventory and marketing according to seasonal trends. --
 
